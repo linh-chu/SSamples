@@ -7,10 +7,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var newFruitList:[String] = []
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(animateText), name: .UIApplicationWillEnterForeground, object: nil)
+    }
+    
+    func animateText() {
+        UIView.animate(withDuration: 2.0) { 
+            self.label.transform = CGAffineTransform(translationX: 50, y: 100)
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .UIApplicationWillEnterForeground, object: nil);
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
