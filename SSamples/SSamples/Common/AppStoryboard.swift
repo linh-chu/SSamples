@@ -8,9 +8,9 @@ enum AppStoryboard: String {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
     }
     
-    func viewController<T: UIViewController>(_ viewControllerType: T.Type, function : String = #function, line : Int = #line, file : String = #file) -> T {
+    func viewController<T: UIViewController>(_ viewControllerClass: T.Type, function : String = #function, line : Int = #line, file : String = #file) -> T {
         
-        let storyboardID = "\(viewControllerType as UIViewController.Type)"
+        let storyboardID = "\(viewControllerClass as UIViewController.Type)"
         guard let vc =  instance.instantiateViewController(withIdentifier: storyboardID) as? T else {
             fatalError("ViewController with identifier \(storyboardID), not found in \(self.rawValue) Storyboard.\nFile : \(file) \nLine Number : \(line) \nFunction : \(function)")
         }
@@ -20,4 +20,8 @@ enum AppStoryboard: String {
 
 extension UIViewController {
     
+    static func instantiate(from appStoryboard: AppStoryboard) -> Self {
+        
+        return appStoryboard.viewController(self)
+    }
 }
