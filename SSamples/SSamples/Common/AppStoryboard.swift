@@ -3,6 +3,7 @@ import UIKit
 enum AppStoryboard: String {
     
     case main = "Main"
+    case tableView = "TableView"
     
     var instance: UIStoryboard {
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
