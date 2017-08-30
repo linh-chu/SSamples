@@ -11,6 +11,7 @@ import AVFoundation
 
 class QRScannerController: UIViewController {
 
+    @IBOutlet weak var previewView: UIView!
     @IBOutlet var messageLabel:UILabel!
     
     var captureSession:AVCaptureSession?
@@ -19,6 +20,13 @@ class QRScannerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "SCAN SESSION"
+        
+        if let barFrame = navigationController?.navigationBar.frame {
+            navigationController?.navigationBar.frame = CGRect(origin: barFrame.origin,
+                                                               size: CGSize(width: barFrame.size.width, height: 50))
+        }
 
         // Get an instance of the AVCaptureDevice class to initialize a device object and provide the video as the media type parameter.
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
@@ -44,14 +52,8 @@ class QRScannerController: UIViewController {
             // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
             videoPreviewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
-            videoPreviewLayer?.frame = view.layer.bounds
-            view.layer.addSublayer(videoPreviewLayer!)
-            
-            // Start video capture.
+            previewView.layer.addSublayer(videoPreviewLayer!)
             captureSession?.startRunning()
-            
-            // Move the message label and top bar to the front
-            view.bringSubview(toFront: messageLabel)
             
             // Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
@@ -59,14 +61,21 @@ class QRScannerController: UIViewController {
             if let qrCodeFrameView = qrCodeFrameView {
                 qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
                 qrCodeFrameView.layer.borderWidth = 2
-                view.addSubview(qrCodeFrameView)
-                view.bringSubview(toFront: qrCodeFrameView)
+                previewView.addSubview(qrCodeFrameView)
+                previewView.bringSubview(toFront: qrCodeFrameView)
             }
         } catch {
             // If any error occurs, simply print it out and don't continue any more.
             print(error)
             return
         }
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // Reset the preview layer frame
+        videoPreviewLayer?.frame = previewView.layer.bounds
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -93,10 +102,19 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barCodeObject!.bounds
             
-            if metadataObj.stringValue != nil {
-                messageLabel.text = metadataObj.stringValue
-                
+            let metadataValues = metadataObj.stringValue.components(separatedBy: "\n")
+            if metadataValues.count >= 4 {
+                let id = metadataValues[0]
+                messageLabel.text = id
+                if AppInstances.scannedCodes.filter({ $0.id == id }).count == 0 {
+                    // The QR code being scanned does not exist in the list
+                    let qrCode = QRCode(id: id, desc: metadataValues[1],
+                                        location: metadataValues[2], dateReceived: metadataValues[3])
+                    AppInstances.scannedCodes.append(qrCode)
+                }
             }
         }
     }
+    
+    
 }

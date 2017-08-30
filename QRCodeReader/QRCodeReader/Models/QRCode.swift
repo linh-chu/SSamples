@@ -12,19 +12,19 @@ struct QRCode {
     var id: String
     var desc: String
     var location: String
-    var dateReceived: Date
+    var receivedDate: String
     
-    init(id: String, desc: String, location: String, dateReceived: Date) {
+    init(id: String, desc: String, location: String, receivedDate: String) {
         self.id = id
         self.desc = desc
         self.location = location
-        self.dateReceived = dateReceived
+        self.receivedDate = receivedDate
     }
     
     init(id: String, desc: String) {
         self.id = id
         self.desc = desc
         self.location = ""
-        self.dateReceived = Date(timeIntervalSinceNow: 0)
+        self.receivedDate = ""
     }
 }

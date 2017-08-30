@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fYY-Nu-hme">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,26 +22,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2c-aZ-o7l">
-                                <rect key="frame" x="54.5" y="303.5" width="266" height="60"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
-                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Start Scanning"/>
-                                <connections>
-                                    <segue destination="B0K-bi-dGX" kind="show" id="hFH-Zl-U8P"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="BWZ-SC-Wfr">
+                                <rect key="frame" x="27" y="185" width="320" height="296"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2c-aZ-o7l">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Start Scan Session">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="B0K-bi-dGX" kind="show" identifier="segueStart" id="hFH-Zl-U8P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uW-Vz-0fh">
+                                        <rect key="frame" x="0.0" y="82" width="320" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Resume Current Session">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="B0K-bi-dGX" kind="show" identifier="segueResume" id="X3y-80-f2P"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-Q9-i30">
+                                        <rect key="frame" x="0.0" y="164" width="320" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Save Current Session">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnSaveTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KDY-1m-7ZA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCE-7w-9AG">
+                                        <rect key="frame" x="0.0" y="246" width="320" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
+                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="View Session List">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="pdQ-hD-2hg" kind="show" identifier="segueViewList" id="2wN-lO-Ial"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Yjr-dc-bC0"/>
+                                    <constraint firstAttribute="height" constant="296" id="f2A-eo-5RQ"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="i2c-aZ-o7l" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hdf-DV-45D"/>
-                            <constraint firstItem="i2c-aZ-o7l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rrZ-GD-UXY"/>
+                            <constraint firstItem="BWZ-SC-Wfr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1oh-CC-s7H"/>
+                            <constraint firstItem="BWZ-SC-Wfr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IYk-uL-fIb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5jA-bD-iZ0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="426" y="-506"/>
+            <point key="canvasLocation" x="1088.8" y="-507.79610194902551"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ART-IT-QH0">
+            <objects>
+                <viewController id="pdQ-hD-2hg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Khu-DC-hYa"/>
+                        <viewControllerLayoutGuide type="bottom" id="BNN-54-rb4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pdj-VR-EWI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pnX-J7-75n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="191"/>
         </scene>
         <!--Scanner Controller-->
         <scene sceneID="6su-PY-OE1">
@@ -54,31 +122,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ISX-bZ-67r">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No QR code is detected" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAl-zJ-uU4">
-                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="oxm-IU-7Qk"/>
+                                    <constraint firstAttribute="height" constant="50" id="i8Q-Nd-VVx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="irj-0H-Q0u" firstAttribute="top" secondItem="AAl-zJ-uU4" secondAttribute="bottom" id="KEf-Oe-RBA"/>
-                            <constraint firstItem="AAl-zJ-uU4" firstAttribute="leading" secondItem="xpT-9d-mEX" secondAttribute="leading" id="d9e-4a-opA"/>
-                            <constraint firstAttribute="trailing" secondItem="AAl-zJ-uU4" secondAttribute="trailing" id="vLP-yj-FSe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ISX-bZ-67r" secondAttribute="trailing" constant="-16" id="DnV-Dn-UJp"/>
+                            <constraint firstItem="ISX-bZ-67r" firstAttribute="top" secondItem="10Y-Tp-fy2" secondAttribute="bottom" id="GIe-Vd-gFP"/>
+                            <constraint firstAttribute="trailing" secondItem="AAl-zJ-uU4" secondAttribute="trailing" id="M1j-AZ-6dS"/>
+                            <constraint firstItem="AAl-zJ-uU4" firstAttribute="top" secondItem="ISX-bZ-67r" secondAttribute="bottom" id="PWN-vE-Hv7"/>
+                            <constraint firstItem="ISX-bZ-67r" firstAttribute="leading" secondItem="xpT-9d-mEX" secondAttribute="leadingMargin" constant="-16" id="ZZi-Bp-9L4"/>
+                            <constraint firstItem="AAl-zJ-uU4" firstAttribute="leading" secondItem="xpT-9d-mEX" secondAttribute="leading" id="cMw-g3-76k"/>
+                            <constraint firstItem="irj-0H-Q0u" firstAttribute="top" secondItem="AAl-zJ-uU4" secondAttribute="bottom" id="jBA-BB-z7Q"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="messageLabel" destination="AAl-zJ-uU4" id="2vr-bb-KNQ"/>
+                        <outlet property="previewView" destination="ISX-bZ-67r" id="ed5-Ax-AAv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VfO-3l-5Cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1175" y="-507"/>
+            <point key="canvasLocation" x="1837.5999999999999" y="-508.69565217391306"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vQR-g1-SJI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fYY-Nu-hme" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="da5-BW-Rks">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sEL-P1-QgI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gr6-jx-ReM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="424.80000000000001" y="-506.89655172413796"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="hFH-Zl-U8P"/>
+    </inferredMetricsTieBreakers>
 </document>

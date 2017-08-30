@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import Foundation
 
 class ViewController: UIViewController {
+    
+    var mQRCodes = Array<QRCode>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +24,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnViewListTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func btnSaveTapped(_ sender: UIButton) {
+        
+    }
+    
     // MARK: - Private Methods
     
     func loadData() {
-//        UserDefault.st
+        if let data = UserDefaults.standard.object(forKey: Config.KEY_BATCH_QRCODE) as? Array<QRCode> {
+            mQRCodes = data
+        }
     }
     
-
+    func saveData() {
+        
+    }
 }
