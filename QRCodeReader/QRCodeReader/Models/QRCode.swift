@@ -9,22 +9,25 @@
 import Foundation
 
 struct QRCode {
-    var id: String
+    var batchId: String
+    var scanSessionId: String
     var desc: String
     var location: String
-    var receivedDate: String
+    var dateReceived: String
     
-    init(id: String, desc: String, location: String, receivedDate: String) {
-        self.id = id
+    init(batchId: String, scanSessionId: String, desc: String, location: String, dateReceived: String) {
+        self.batchId = batchId
+        self.scanSessionId = scanSessionId
         self.desc = desc
         self.location = location
-        self.receivedDate = receivedDate
+        self.dateReceived = dateReceived
     }
     
-    init(id: String, desc: String) {
-        self.id = id
+    init(batchId: String, scanSessionId: String, desc: String) {
+        self.batchId = batchId
+        self.scanSessionId = scanSessionId
         self.desc = desc
         self.location = ""
-        self.receivedDate = ""
+        self.dateReceived = ""
     }
 }

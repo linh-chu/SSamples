@@ -10,14 +10,14 @@ import Foundation
 
 struct ScanSession {
     var id: String
-    var createdDate: Date
+    var dateCreated: Date
     var lastModified: Date
     
     init() {
         let now = Date(timeIntervalSinceNow: 0)
         
         self.id = UUID().uuidString
-        self.createdDate = now
+        self.dateCreated = now
         self.lastModified = now
     }    
 }

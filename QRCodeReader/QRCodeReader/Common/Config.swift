@@ -10,12 +10,40 @@ import Foundation
 
 enum Config {
     
-    static let KEY_BATCH_QRCODE: String = "KeyBatchQRCode"
+//    static let KEY_BATCH_QRCODE: String = "KeyBatchQRCode"
     static let KEY_SCAN_SESSION_LIST: String = "KeyScanSessionList"
 }
 
-struct AppInstances {
+enum AppInstances {
     
-    static var scanSessions = Array<ScanSession>()
-    static var scannedCodes = Array<QRCode>()
+    static var scanSessionList = Array<ScanSession>()
+    static var scannedCodeList = Array<QRCode>()
+    static var scanSession: ScanSession?
+}
+
+enum AppMethods {
+    
+    static func saveScanSessionList() {
+        UserDefaults.standard.set(AppInstances.scanSessionList, forKey: Config.KEY_SCAN_SESSION_LIST)
+        UserDefaults.standard.synchronize()
+    }
+    
+    static func saveScannedCodeList() {
+        if let scanSession = AppInstances.scanSession {
+            UserDefaults.standard.set(AppInstances.scannedCodeList, forKey: scanSession.id)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    static func loadScanSessionList() {
+        if let data = UserDefaults.standard.object(forKey: Config.KEY_SCAN_SESSION_LIST) as? Array<ScanSession> {
+            AppInstances.scanSessionList = data
+        }
+    }
+    
+    static func loadScannedCodeList(with scanSession: ScanSession) {
+        if let data = UserDefaults.standard.object(forKey: scanSession.id) as? Array<QRCode> {
+            AppInstances.scannedCodeList = data
+        }
+    }
 }

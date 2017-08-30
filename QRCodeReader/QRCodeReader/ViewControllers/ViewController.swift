@@ -11,7 +11,8 @@ import Foundation
 
 class ViewController: UIViewController {
     
-    var mQRCodes = Array<QRCode>()
+    var mScanSessions = Array<ScanSession>()
+    var mScannedCodes = Array<QRCode>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +35,16 @@ class ViewController: UIViewController {
     // MARK: - Private Methods
     
     func loadData() {
-        if let data = UserDefaults.standard.object(forKey: Config.KEY_BATCH_QRCODE) as? Array<QRCode> {
-            mQRCodes = data
+        if let data = UserDefaults.standard.object(forKey: Config.KEY_SCAN_SESSION_LIST) as? Array<ScanSession> {
+            AppInstances.scanSessionList = data
         }
     }
     
     func saveData() {
         
+        if let scanSession = AppInstances.scanSession {
+            UserDefaults.standard.set(AppInstances.scannedCodeList, forKey: scanSession.id)
+            UserDefaults.standard.synchronize()
+        }
     }
 }

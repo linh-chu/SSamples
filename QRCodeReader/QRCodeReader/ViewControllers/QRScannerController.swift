@@ -17,6 +17,7 @@ class QRScannerController: UIViewController {
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
+    var mScanSessionId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,13 +105,13 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
             
             let metadataValues = metadataObj.stringValue.components(separatedBy: "\n")
             if metadataValues.count >= 4 {
-                let id = metadataValues[0]
-                messageLabel.text = id
-                if AppInstances.scannedCodes.filter({ $0.id == id }).count == 0 {
+                let batchId = metadataValues[0]
+                messageLabel.text = batchId
+                if AppInstances.scannedCodeList.filter({ $0.batchId == batchId }).count == 0 {
                     // The QR code being scanned does not exist in the list
-                    let qrCode = QRCode(id: id, desc: metadataValues[1],
+                    let qrCode = QRCode(batchId: batchId, scanSessionId: mScanSessionId, desc: metadataValues[1],
                                         location: metadataValues[2], dateReceived: metadataValues[3])
-                    AppInstances.scannedCodes.append(qrCode)
+                    AppInstances.scannedCodeList.append(qrCode)
                 }
             }
         }
