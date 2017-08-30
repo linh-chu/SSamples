@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8729F3E91F5663FC00A5DF86 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729F3E81F5663FC00A5DF86 /* QRCodeViewController.swift */; };
+		8729F3ED1F567C3100A5DF86 /* img_scanning_qrcode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8729F3EB1F567C3100A5DF86 /* img_scanning_qrcode.jpg */; };
+		8729F3EE1F567C3100A5DF86 /* img_scanning_qrcode.png in Resources */ = {isa = PBXBuildFile; fileRef = 8729F3EC1F567C3100A5DF86 /* img_scanning_qrcode.png */; };
 		F4F09DB71DAF669400026BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F09DB61DAF669400026BB2 /* AppDelegate.swift */; };
 		F4F09DBC1DAF669400026BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBA1DAF669400026BB2 /* Main.storyboard */; };
 		F4F09DBE1DAF669400026BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBD1DAF669400026BB2 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		8729F3E81F5663FC00A5DF86 /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		8729F3EB1F567C3100A5DF86 /* img_scanning_qrcode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img_scanning_qrcode.jpg; sourceTree = "<group>"; };
+		8729F3EC1F567C3100A5DF86 /* img_scanning_qrcode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_scanning_qrcode.png; sourceTree = "<group>"; };
 		F4F09DB31DAF669400026BB2 /* QRCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F09DB61DAF669400026BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4F09DBB1DAF669400026BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -37,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8729F3EA1F567C3100A5DF86 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8729F3EB1F567C3100A5DF86 /* img_scanning_qrcode.jpg */,
+				8729F3EC1F567C3100A5DF86 /* img_scanning_qrcode.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		F4F09DAA1DAF669400026BB2 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +69,7 @@
 		F4F09DB51DAF669400026BB2 /* QRCodeReader */ = {
 			isa = PBXGroup;
 			children = (
+				8729F3EA1F567C3100A5DF86 /* Resources */,
 				F4F09DB61DAF669400026BB2 /* AppDelegate.swift */,
 				F4F09DBA1DAF669400026BB2 /* Main.storyboard */,
 				F4F09DBD1DAF669400026BB2 /* Assets.xcassets */,
@@ -94,7 +108,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = AppCoda;
 				TargetAttributes = {
 					F4F09DB21DAF669400026BB2 = {
@@ -127,8 +141,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8729F3ED1F567C3100A5DF86 /* img_scanning_qrcode.jpg in Resources */,
 				F4F09DC11DAF669400026BB2 /* LaunchScreen.storyboard in Resources */,
 				F4F09DBE1DAF669400026BB2 /* Assets.xcassets in Resources */,
+				8729F3EE1F567C3100A5DF86 /* img_scanning_qrcode.png in Resources */,
 				F4F09DBC1DAF669400026BB2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -186,6 +202,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -236,6 +253,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
