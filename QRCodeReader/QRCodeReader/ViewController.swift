@@ -1,14 +1,15 @@
 //
-//  QRCodeViewController.swift
+//  ViewController.swift
 //  QRCodeReader
 //
-//  Created by Simon Ng on 13/10/2016.
-//  Copyright © 2016 AppCoda. All rights reserved.
+//  Created by Linh Chu on 30/8/17.
+//  Copyright © 2017 Philology Pty. Ltd. All rights reserved.
 //
 
 import UIKit
 
-class QRCodeViewController: UIViewController {
+
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +22,11 @@ class QRCodeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // MARK: - Private Methods
     
-    // MARK: - Navigation
-
-    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {
-        dismiss(animated: true, completion: nil)
+    func loadData() {
+//        UserDefault.st
     }
+    
 
 }
