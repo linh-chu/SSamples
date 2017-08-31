@@ -16,13 +16,25 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "QRCode Reader"
 
-        // Do any additional setup after loading the view.
+//        let qrCode = QRCode(batchId: "test", scanSessionId: "", desc: "session 1",
+//                            location: "philology", dateReceived: "today")
+//        AppInstances.scannedCodeList.append(qrCode)
+//        AppInstances.scannedCodeList.append(qrCode)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueStart" {
+            AppInstances.scannedCodeList.removeAll()
+        }
     }
     
     @IBAction func btnViewListTapped(_ sender: UIButton) {

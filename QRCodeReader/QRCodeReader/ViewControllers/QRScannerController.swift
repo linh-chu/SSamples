@@ -115,7 +115,5 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                 }
             }
         }
-    }
-    
-    
+    }        
 }
