@@ -34,8 +34,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueStart" {
             AppInstances.scannedCodeList.removeAll()
-        }else if segue.identifier == "segueResume" {
-        }
+        }else if segue.identifier == "segueResume" {}
     }
     
     @IBAction func btnViewListTapped(_ sender: UIButton) {
