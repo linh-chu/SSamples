@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueStart" {
             AppInstances.scannedCodeList.removeAll()
+        }else if segue.identifier == "segueResume" {
         }
     }
     
