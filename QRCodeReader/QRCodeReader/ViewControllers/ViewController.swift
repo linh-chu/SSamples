@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "QRCode Reader"
+        
+        let a = ContentView()
 
 //        let qrCode = QRCode(batchId: "test", scanSessionId: "", desc: "session 1",
 //                            location: "philology", dateReceived: "today")
@@ -44,6 +46,11 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func settingsButtonOnTap(_ sender: UIButton) {
+        popUpSettings()
+    }
+    
+    
     // MARK: - Private Methods
     
     func loadData() {
@@ -58,5 +65,15 @@ class ViewController: UIViewController {
             UserDefaults.standard.set(AppInstances.scannedCodeList, forKey: scanSession.id)
             UserDefaults.standard.synchronize()
         }
+    }
+    
+    // Pop up FindCow view controller
+    func popUpSettings() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let settingsVC = storyboard.instantiateViewController(withIdentifier :"SettingsViewController") as! BasePopupController
+        self.addChildViewController(settingsVC)
+        self.view.addSubview(settingsVC.view)
+        settingsVC.view.frame = self.view.frame
+        settingsVC.didMove(toParentViewController: self)
     }
 }
