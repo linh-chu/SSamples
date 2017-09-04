@@ -14,6 +14,7 @@
 		8729F3F61F5685BF00A5DF86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729F3F41F5685BF00A5DF86 /* ViewController.swift */; };
 		8729F3F91F56866900A5DF86 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729F3F81F56866900A5DF86 /* Config.swift */; };
 		8729F3FB1F56A46100A5DF86 /* ScanSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729F3FA1F56A46100A5DF86 /* ScanSession.swift */; };
+		8729F3FD1F5CE66500A5DF86 /* censor-beep-01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8729F3FC1F5CE66500A5DF86 /* censor-beep-01.wav */; };
 		87439BB51F57AFAF005930FC /* QRCodeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87439BB41F57AFAF005930FC /* QRCodeListController.swift */; };
 		F4F09DB71DAF669400026BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F09DB61DAF669400026BB2 /* AppDelegate.swift */; };
 		F4F09DBC1DAF669400026BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBA1DAF669400026BB2 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		8729F3F41F5685BF00A5DF86 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewControllers/ViewController.swift; sourceTree = "<group>"; };
 		8729F3F81F56866900A5DF86 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = Common/Config.swift; sourceTree = "<group>"; };
 		8729F3FA1F56A46100A5DF86 /* ScanSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanSession.swift; path = Models/ScanSession.swift; sourceTree = "<group>"; };
+		8729F3FC1F5CE66500A5DF86 /* censor-beep-01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "censor-beep-01.wav"; sourceTree = "<group>"; };
 		87439BB41F57AFAF005930FC /* QRCodeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeListController.swift; path = ViewControllers/QRCodeListController.swift; sourceTree = "<group>"; };
 		F4F09DB31DAF669400026BB2 /* QRCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F09DB61DAF669400026BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		8729F3EA1F567C3100A5DF86 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8729F3FC1F5CE66500A5DF86 /* censor-beep-01.wav */,
 				8729F3EB1F567C3100A5DF86 /* img_scanning_qrcode.jpg */,
 				8729F3EC1F567C3100A5DF86 /* img_scanning_qrcode.png */,
 			);
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8729F3ED1F567C3100A5DF86 /* img_scanning_qrcode.jpg in Resources */,
+				8729F3FD1F5CE66500A5DF86 /* censor-beep-01.wav in Resources */,
 				F4F09DC11DAF669400026BB2 /* LaunchScreen.storyboard in Resources */,
 				F4F09DBE1DAF669400026BB2 /* Assets.xcassets in Resources */,
 				8729F3EE1F567C3100A5DF86 /* img_scanning_qrcode.png in Resources */,

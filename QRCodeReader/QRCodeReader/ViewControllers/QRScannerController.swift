@@ -14,10 +14,14 @@ class QRScannerController: UIViewController {
     @IBOutlet weak var previewView: UIView!
     @IBOutlet var messageLabel:UILabel!
     
+    var audioPlayer:AVAudioPlayer?
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
     var mScanSessionId: String = ""
+    
+    var systemSoundID: SystemSoundID = 2000
+    var hasPlayedSound = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,12 +62,16 @@ class QRScannerController: UIViewController {
             
             // Initialize QR Code Frame to highlight the QR code
             qrCodeFrameView = UIView()
-            
             if let qrCodeFrameView = qrCodeFrameView {
                 qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
                 qrCodeFrameView.layer.borderWidth = 2
                 previewView.addSubview(qrCodeFrameView)
                 previewView.bringSubview(toFront: qrCodeFrameView)
+            }
+            
+            // Create a beep system sound id
+            if let soundUrl = Bundle.main.url(forResource: "censor-beep-01", withExtension: "wav") {
+                AudioServicesCreateSystemSoundID(soundUrl as CFURL, &systemSoundID)
             }
         } catch {
             // If any error occurs, simply print it out and don't continue any more.
@@ -82,6 +90,11 @@ class QRScannerController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    deinit {
+        // Dispose the created system sound id
+        AudioServicesDisposeSystemSoundID(systemSoundID)
+    }
 }
 
 extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
@@ -90,6 +103,7 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
         
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects == nil || metadataObjects.count == 0 {
+            hasPlayedSound = false
             qrCodeFrameView?.frame = CGRect.zero
             messageLabel.text = "No QR code is detected"
             return
@@ -113,7 +127,14 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                                         location: metadataValues[2], dateReceived: metadataValues[3])
                     AppInstances.scannedCodeList.append(qrCode)
                 }
+                
+                if !hasPlayedSound {
+                    AudioServicesPlaySystemSound(systemSoundID)
+                    hasPlayedSound = true
+                }
             }
         }
-    }        
+    }
+    
+    
 }
