@@ -12,14 +12,14 @@ import AVFoundation
 class QRScannerController: UIViewController {
 
     @IBOutlet weak var previewView: UIView!
-    @IBOutlet var messageLabel:UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var audioPlayer:AVAudioPlayer?
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
     var mScanSessionId: String = ""
-    
     var systemSoundID: SystemSoundID = 2000
     var hasPlayedSound = false
     
@@ -70,9 +70,7 @@ class QRScannerController: UIViewController {
             }
             
             // Create a beep system sound id
-            if let soundUrl = Bundle.main.url(forResource: "censor-beep-01", withExtension: "wav") {
-                AudioServicesCreateSystemSoundID(soundUrl as CFURL, &systemSoundID)
-            }
+            CensorSound.createBeep()
         } catch {
             // If any error occurs, simply print it out and don't continue any more.
             print(error)
@@ -93,7 +91,7 @@ class QRScannerController: UIViewController {
     
     deinit {
         // Dispose the created system sound id
-        AudioServicesDisposeSystemSoundID(systemSoundID)
+        CensorSound.disposeBeep()
     }
 }
 
@@ -126,10 +124,12 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                     let qrCode = QRCode(batchId: batchId, scanSessionId: mScanSessionId, desc: metadataValues[1],
                                         location: metadataValues[2], dateReceived: metadataValues[3])
                     AppInstances.scannedCodeList.append(qrCode)
+                    // Update total label
+                    totalLabel.text = String(AppInstances.scannedCodeList.count)
                 }
                 
                 if !hasPlayedSound {
-                    AudioServicesPlaySystemSound(systemSoundID)
+                    CensorSound.playBeep()
                     hasPlayedSound = true
                 }
             }
