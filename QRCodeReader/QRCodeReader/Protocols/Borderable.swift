@@ -36,3 +36,15 @@ class CenterView: UIView, Borderable {
     }
 }
 
+class Button: UIButton, Borderable {
+    var borderColor: UIColor = .clear
+    var borderWidth: CGFloat = 0
+    var cornerRadius: CGFloat = 5
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        addBorder()
+    }
+}
+

@@ -17,7 +17,7 @@ class SettingsController: BasePopupController {
     @IBOutlet weak var defaultEntityTextField: UITextField!
     @IBOutlet weak var deviceIdTextField: UITextField!
     
-    let defaultEntity = LCTupleInt(key: 1, value: "Site A")
+    var defaultEntity: LCTupleInt?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +30,26 @@ class SettingsController: BasePopupController {
         if let uuid = UIDevice.current.identifierForVendor?.uuidString {
             deviceIdTextField.text = uuid
         }
+        
+        AppMethods.loadSettings()
+        if let settings = AppInstances.settings {
+            nameTextField.text = settings.name
+            let filteredEntities = AppInstances.entities.filter({ $0.key == settings.entityCode })
+            if filteredEntities.count > 0 {
+                defaultEntity = filteredEntities[0]
+                defaultEntityTextField.text = defaultEntity?.value
+            }
+        }
     }
 
     @IBAction func saveButtonOnTap(_ sender: UIButton) {
+        let name = nameTextField.text
+        let entityCode = defaultEntity?.key
+        let deviceId = deviceIdTextField.text
+        
+        let settings = Settings(name: name, entityCode: entityCode, deviceId: deviceId)
+        AppMethods.saveSettings(settings)
+        removeAnimate()
     }
 
     @IBAction func cancelButtonOnTap(_ sender: UIButton) {
@@ -40,7 +57,19 @@ class SettingsController: BasePopupController {
     }
     
     @IBAction func defaultEntityButtonOnTap(_ sender: UIButton) {
+        popover(sender, title: "Entities")
+    }
+    
+    func popover(_ sender: UIView, title: String) {
+        let popoverInt = PopoverInt(for: sender, title: title) { [unowned self] tuple in
+            guard let selectedData = tuple else { return }
+            
+            self.defaultEntity = selectedData
+            self.defaultEntityTextField.text = selectedData.value
+        }
+        popoverInt.dataList = AppInstances.entities
         
+        present(popoverInt, animated: true, completion: nil)
     }
 }
 

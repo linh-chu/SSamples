@@ -57,8 +57,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func saveData() {
-        
+    func saveData() {        
         if let scanSession = AppInstances.scanSession {
             UserDefaults.standard.set(AppInstances.scannedCodeList, forKey: scanSession.id)
             UserDefaults.standard.synchronize()
