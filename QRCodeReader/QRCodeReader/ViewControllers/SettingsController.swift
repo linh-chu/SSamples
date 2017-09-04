@@ -17,13 +17,19 @@ class SettingsController: BasePopupController {
     @IBOutlet weak var defaultEntityTextField: UITextField!
     @IBOutlet weak var deviceIdTextField: UITextField!
     
+    let defaultEntity = LCTupleInt(key: 1, value: "Site A")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.clear
         self.scrollView.backgroundColor = UIColor.clear
         self.mainView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
-        self.showAnimate()                
+        self.showAnimate()
+        
+        if let uuid = UIDevice.current.identifierForVendor?.uuidString {
+            deviceIdTextField.text = uuid
+        }
     }
 
     @IBAction func saveButtonOnTap(_ sender: UIButton) {

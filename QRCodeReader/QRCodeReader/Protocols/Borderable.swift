@@ -21,7 +21,7 @@ extension Borderable where Self: UIView {
         layer.borderWidth = borderWidth
         layer.cornerRadius = cornerRadius
         clipsToBounds = cornerRadius > 0
-    }    
+    }
 }
 
 class CenterView: UIView, Borderable {

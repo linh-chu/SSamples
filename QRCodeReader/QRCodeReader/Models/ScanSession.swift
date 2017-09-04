@@ -12,6 +12,8 @@ struct ScanSession {
     var id: String
     var dateCreated: Date
     var lastModified: Date
+    var name: String
+    var deviceId: String
     
     init() {
         let now = Date(timeIntervalSinceNow: 0)
@@ -19,5 +21,7 @@ struct ScanSession {
         self.id = UUID().uuidString
         self.dateCreated = now
         self.lastModified = now
+        self.name = ""
+        self.deviceId = ""
     }    
 }
