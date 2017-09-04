@@ -12,7 +12,7 @@ class SettingsController: BasePopupController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var contentView: ContentView!
+    @IBOutlet weak var contentView: CenterView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var defaultEntityTextField: UITextField!
     @IBOutlet weak var deviceIdTextField: UITextField!
@@ -23,20 +23,19 @@ class SettingsController: BasePopupController {
         self.view.backgroundColor = UIColor.clear
         self.scrollView.backgroundColor = UIColor.clear
         self.mainView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
-        self.showAnimate()
+        self.showAnimate()                
     }
 
     @IBAction func saveButtonOnTap(_ sender: UIButton) {
     }
 
     @IBAction func cancelButtonOnTap(_ sender: UIButton) {
-        removeAnimate()        
+        removeAnimate()
     }
     
     @IBAction func defaultEntityButtonOnTap(_ sender: UIButton) {
+        
     }
-    
-    
 }
 
 

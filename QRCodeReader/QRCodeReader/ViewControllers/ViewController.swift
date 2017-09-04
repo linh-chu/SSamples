@@ -19,8 +19,6 @@ class ViewController: UIViewController {
         
         self.title = "QRCode Reader"
         
-        let a = ContentView()
-
 //        let qrCode = QRCode(batchId: "test", scanSessionId: "", desc: "session 1",
 //                            location: "philology", dateReceived: "today")
 //        AppInstances.scannedCodeList.append(qrCode)
