@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class QRScannerController: UIViewController {
+class QRScannerController: BaseController {
 
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var totalLabel: UILabel!
@@ -19,8 +19,7 @@ class QRScannerController: UIViewController {
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
-    var mScanSessionId: String = ""
-    var systemSoundID: SystemSoundID = 2000
+    var mScanSessionId: String = ""    
     var hasPlayedSound = false
     
     override func viewDidLoad() {
@@ -83,10 +82,6 @@ class QRScannerController: UIViewController {
         
         // Reset the preview layer frame
         videoPreviewLayer?.frame = previewView.layer.bounds
-    }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
     }
     
     deinit {

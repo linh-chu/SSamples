@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
+class ViewController: BaseController {
     
     var mScanSessions = Array<ScanSession>()
     var mScannedCodes = Array<QRCode>()
@@ -24,11 +24,6 @@ class ViewController: UIViewController {
 //        AppInstances.scannedCodeList.append(qrCode)
 //        AppInstances.scannedCodeList.append(qrCode)
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

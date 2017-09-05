@@ -17,7 +17,7 @@ class QRCodeTableViewCell: UITableViewCell {
     
 }
 
-class QRCodeListController: UIViewController {
+class QRCodeListController: BaseController {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,6 +25,10 @@ class QRCodeListController: UIViewController {
         super.viewDidLoad()
         
     }
+    
+    @IBAction func sendButtonOnTap(_ sender: UIBarButtonItem) {
+    }
+    
 }
 
 extension QRCodeListController: UITableViewDelegate, UITableViewDataSource {

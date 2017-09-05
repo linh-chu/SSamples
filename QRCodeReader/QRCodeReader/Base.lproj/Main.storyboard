@@ -104,7 +104,7 @@
             </objects>
             <point key="canvasLocation" x="1088.8" y="-507.79610194902551"/>
         </scene>
-        <!--Code List Controller-->
+        <!--Scanned Code List-->
         <scene sceneID="ART-IT-QH0">
             <objects>
                 <viewController id="pdQ-hD-2hg" customClass="QRCodeListController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
@@ -202,6 +202,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Scanned Code List" id="Hc5-c9-JHK">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="FKG-VM-oHj"/>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="UBh-YW-ceT">
+                            <connections>
+                                <action selector="sendButtonOnTap:" destination="pdQ-hD-2hg" id="fsO-FV-2MS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="E16-Sk-7qv" id="c06-3z-Akk"/>
                     </connections>

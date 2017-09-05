@@ -25,6 +25,7 @@
 		8729F40C1F5D4C8A00A5DF86 /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729F40B1F5D4C8A00A5DF86 /* Codable.swift */; };
 		8729F40F1F5E238800A5DF86 /* AppMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729F40E1F5E238800A5DF86 /* AppMethods.swift */; };
 		8729F4111F5E23B100A5DF86 /* AppInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729F4101F5E23B100A5DF86 /* AppInstances.swift */; };
+		8729F4131F5E25C600A5DF86 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729F4121F5E25C600A5DF86 /* BaseController.swift */; };
 		87439BB51F57AFAF005930FC /* QRCodeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87439BB41F57AFAF005930FC /* QRCodeListController.swift */; };
 		F4F09DB71DAF669400026BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F09DB61DAF669400026BB2 /* AppDelegate.swift */; };
 		F4F09DBC1DAF669400026BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBA1DAF669400026BB2 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		8729F40B1F5D4C8A00A5DF86 /* Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Codable.swift; path = Protocols/Codable.swift; sourceTree = "<group>"; };
 		8729F40E1F5E238800A5DF86 /* AppMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppMethods.swift; path = Common/AppMethods.swift; sourceTree = "<group>"; };
 		8729F4101F5E23B100A5DF86 /* AppInstances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppInstances.swift; path = Common/AppInstances.swift; sourceTree = "<group>"; };
+		8729F4121F5E25C600A5DF86 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseController.swift; path = ViewControllers/BaseController.swift; sourceTree = "<group>"; };
 		87439BB41F57AFAF005930FC /* QRCodeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeListController.swift; path = ViewControllers/QRCodeListController.swift; sourceTree = "<group>"; };
 		CF8808BCE0CD115E310A0FCA /* Pods-QRCodeReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRCodeReader/Pods-QRCodeReader.release.xcconfig"; sourceTree = "<group>"; };
 		F4F09DB31DAF669400026BB2 /* QRCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 		8729F3EF1F567DE900A5DF86 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8729F4121F5E25C600A5DF86 /* BaseController.swift */,
 				8729F4021F5CFFD800A5DF86 /* BasePopupController.swift */,
 				8729F3F41F5685BF00A5DF86 /* ViewController.swift */,
 				8729F3F31F5685BF00A5DF86 /* QRScannerController.swift */,
@@ -321,6 +324,7 @@
 				8729F40C1F5D4C8A00A5DF86 /* Codable.swift in Sources */,
 				8729F40F1F5E238800A5DF86 /* AppMethods.swift in Sources */,
 				8729F4111F5E23B100A5DF86 /* AppInstances.swift in Sources */,
+				8729F4131F5E25C600A5DF86 /* BaseController.swift in Sources */,
 				8729F4031F5CFFD800A5DF86 /* BasePopupController.swift in Sources */,
 				8729F3F91F56866900A5DF86 /* Config.swift in Sources */,
 				8729F3F61F5685BF00A5DF86 /* ViewController.swift in Sources */,
