@@ -19,17 +19,18 @@ class CSVHelper {
         self.delegate = delegate
     }
     
-    func exportScannedList(_ fileName: String, _ scannedList: Array<QRCode>, _ scanSession: ScanSession) {
+    func exportData(_ scannedList: Array<QRCode>, _ scanSession: ScanSession) {
         // Get path using the temporary directory and file name
+        let fileName = "Scan Date,\(scanSession.dateCreated)\n\n"
         let path = URL(fileURLWithPath: NSTemporaryDirectory().appending(fileName))
-        
-        var csvText = "Trim Date,\(scanSession.dateCreated)\n\n"
         
         let name = scanSession.name
         let dateCreated = scanSession.dateCreated
         let entityValue = AppMethods.getEntity(code: scanSession.entityCode)?.value ?? ""
         let devideId = scanSession.deviceId
-        csvText.append("Name:,'\(name),,Date Created:,\(dateCreated),,Entity:,\(entityValue),,Device Id:,\(devideId)\n")
+        
+        var csvText = fileName
+        csvText.append("Name:,'\(name),,Entity:,\(entityValue),,Device Id:,\(devideId)\n")
         
         // Add title details
         csvText.append("Batch Id,Description,Location,Date Received\n")

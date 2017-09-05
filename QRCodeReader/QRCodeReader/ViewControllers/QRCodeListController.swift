@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 class QRCodeTableViewCell: UITableViewCell {
     
@@ -27,8 +28,15 @@ class QRCodeListController: BaseController {
     }
     
     @IBAction func sendButtonOnTap(_ sender: UIBarButtonItem) {
-    }
-    
+        if let scanSession = AppInstances.scanSession,
+            AppInstances.scannedCodeList.count > 0 {
+            
+            let csvHelper = CSVHelper(target: self, delegate: self)
+            csvHelper.exportData(AppInstances.scannedCodeList, scanSession)
+        } else {
+//            presentDefaultAlert("Please select data to export")
+        }
+    }    
 }
 
 extension QRCodeListController: UITableViewDelegate, UITableViewDataSource {
@@ -52,5 +60,21 @@ extension QRCodeListController: UITableViewDelegate, UITableViewDataSource {
         cell.lblDateReceived.text = qrCode.dateReceived
         
         return cell
+    }
+}
+
+extension QRCodeListController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        var message = ""
+        if result == .sent {
+            message = "Email has been sent"
+        } else if result == .cancelled {
+            message = "Email has been canceled"
+        }
+        
+        controller.dismiss(animated: true) {
+//            self.makeToast(message)
+        }
     }
 }
