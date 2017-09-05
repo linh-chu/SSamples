@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class ViewController: BaseController {
+class MainController: BaseController {
     
     var mScanSessions = Array<ScanSession>()
     var mScannedCodes = Array<QRCode>()

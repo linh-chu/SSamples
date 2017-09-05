@@ -17,7 +17,7 @@ class SettingsController: BasePopupController {
     @IBOutlet weak var defaultEntityTextField: UITextField!
     @IBOutlet weak var deviceIdTextField: UITextField!
     
-    var defaultEntity: LCTupleInt?
+    var mDefaultEntity: LCTupleInt?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,17 +34,16 @@ class SettingsController: BasePopupController {
         AppMethods.loadSettings()
         if let settings = AppInstances.settings {
             nameTextField.text = settings.name
-            let filteredEntities = AppInstances.entities.filter({ $0.key == settings.entityCode })
-            if filteredEntities.count > 0 {
-                defaultEntity = filteredEntities[0]
-                defaultEntityTextField.text = defaultEntity?.value
+            if let entity = AppMethods.getEntity(code: settings.entityCode) {
+                mDefaultEntity = entity
+                defaultEntityTextField.text = entity.value
             }
         }
     }
 
     @IBAction func saveButtonOnTap(_ sender: UIButton) {
         let name = nameTextField.text
-        let entityCode = defaultEntity?.key
+        let entityCode = mDefaultEntity?.key
         let deviceId = deviceIdTextField.text
         
         let settings = Settings(name: name, entityCode: entityCode, deviceId: deviceId)
@@ -64,7 +63,7 @@ class SettingsController: BasePopupController {
         let popoverInt = PopoverInt(for: sender, title: title) { [unowned self] tuple in
             guard let selectedData = tuple else { return }
             
-            self.defaultEntity = selectedData
+            self.mDefaultEntity = selectedData
             self.defaultEntityTextField.text = selectedData.value
         }
         popoverInt.dataList = AppInstances.entities

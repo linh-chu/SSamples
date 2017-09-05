@@ -33,6 +33,10 @@ class QRCodeListController: BaseController {
 
 extension QRCodeListController: UITableViewDelegate, UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.001
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return AppInstances.scannedCodeList.count

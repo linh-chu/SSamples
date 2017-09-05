@@ -49,4 +49,20 @@ enum AppMethods {
             }
         }
     }
+    
+    static func getEntity(code: Int) -> LCTupleInt? {
+        let items = AppInstances.entities.filter({ $0.key == code })
+        if items.count > 0 {
+            return items[0]
+        }
+        return nil
+    }
+    
+    static func getStatus(code: Int) -> LCTupleInt? {
+        let items = AppInstances.statuses.filter({ $0.key == code })
+        if items.count > 0 {
+            return items[0]
+        }
+        return nil
+    }
 }

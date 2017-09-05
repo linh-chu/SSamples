@@ -13,6 +13,7 @@ struct ScanSession {
     var dateCreated: Date
     var lastModified: Date
     var name: String
+    var entityCode: Int
     var deviceId: String
     
     init() {
@@ -22,6 +23,7 @@ struct ScanSession {
         self.dateCreated = now
         self.lastModified = now
         self.name = ""
+        self.entityCode = 0
         self.deviceId = ""
     }    
 }
