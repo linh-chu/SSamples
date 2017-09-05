@@ -22,8 +22,8 @@ struct ScanSession {
         self.id = UUID().uuidString
         self.dateCreated = now
         self.lastModified = now
-        self.name = ""
-        self.entityCode = 0
-        self.deviceId = ""
+        self.name = "Linh"
+        self.entityCode = 1
+        self.deviceId = "123"
     }    
 }

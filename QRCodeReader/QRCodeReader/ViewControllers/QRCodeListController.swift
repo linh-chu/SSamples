@@ -34,7 +34,7 @@ class QRCodeListController: BaseController {
             let csvHelper = CSVHelper(target: self, delegate: self)
             csvHelper.exportData(AppInstances.scannedCodeList, scanSession)
         } else {
-//            presentDefaultAlert("Please select data to export")
+            self.view.makeToast("There is no data to export", backgroundColor: .red)
         }
     }    
 }
@@ -74,7 +74,7 @@ extension QRCodeListController: MFMailComposeViewControllerDelegate {
         }
         
         controller.dismiss(animated: true) {
-//            self.makeToast(message)
+            self.view.makeToast(message)
         }
     }
 }

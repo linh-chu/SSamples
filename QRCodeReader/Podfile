@@ -4,5 +4,7 @@ target 'QRCodeReader' do
   use_frameworks!
 
 pod 'LCUIComponents' 
+pod 'MBProgressHUD'
+pod 'Toast-Swift', '~> 2.0.0'
 
 end

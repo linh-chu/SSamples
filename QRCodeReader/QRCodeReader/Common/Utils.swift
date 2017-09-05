@@ -212,16 +212,5 @@ class Utils {
         return emailTest.evaluate(with: string)
     }
     
-//    static func showHUD(in view: UIView) {
-//        let hud = MBProgressHUD.showAdded(to: view, animated: true)
-//        hud.bezelView.color = .black
-////        hud.bezelView.style = .solidColor
-//        hud.contentColor = .white
-//        hud.animationType = .zoom
-//        hud.isUserInteractionEnabled = false
-//    }
-//    
-//    static func hideHUD(in view: UIView) {
-//        MBProgressHUD.hide(for: view, animated: true)
-//    }
+
 }
