@@ -14,8 +14,7 @@ class QRCodeTableViewCell: UITableViewCell {
     @IBOutlet weak var lblDateReceived: UILabel!
     @IBOutlet weak var lblLocation: UILabel!
     @IBOutlet weak var lblDesc: UILabel!
-    @IBOutlet weak var lblBatchId: UILabel!
-    
+    @IBOutlet weak var lblBatchId: UILabel!    
 }
 
 class QRCodeListController: BaseController {
@@ -34,7 +33,7 @@ class QRCodeListController: BaseController {
             let csvHelper = CSVHelper(target: self, delegate: self)
             csvHelper.exportData(AppInstances.scannedCodeList, scanSession)
         } else {
-            self.view.makeToast("There is no data to export", backgroundColor: .red)
+            self.view.showToast("There is no data to export", backgroundColor: .red)
         }
     }    
 }
@@ -74,7 +73,7 @@ extension QRCodeListController: MFMailComposeViewControllerDelegate {
         }
         
         controller.dismiss(animated: true) {
-            self.view.makeToast(message)
+            self.view.showToast(message)
         }
     }
 }

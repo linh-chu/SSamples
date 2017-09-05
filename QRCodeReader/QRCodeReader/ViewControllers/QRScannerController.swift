@@ -19,7 +19,6 @@ class QRScannerController: BaseController {
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
-    var mScanSessionId: String = ""    
     var hasPlayedSound = false
     
     override func viewDidLoad() {
@@ -36,6 +35,9 @@ class QRScannerController: BaseController {
         let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         do {
+            // Init a scan session
+            AppInstances.scanSession = ScanSession()
+            
             // Get an instance of the AVCaptureDeviceInput class using the previous device object.
             let input = try AVCaptureDeviceInput(device: captureDevice)
             
@@ -116,7 +118,7 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
                 messageLabel.text = batchId
                 if AppInstances.scannedCodeList.filter({ $0.batchId == batchId }).count == 0 {
                     // The QR code being scanned does not exist in the list
-                    let qrCode = QRCode(batchId: batchId, scanSessionId: mScanSessionId, desc: metadataValues[1],
+                    let qrCode = QRCode(batchId: batchId, scanSessionId: AppInstances.scanSession!.id, desc: metadataValues[1],
                                         location: metadataValues[2], dateReceived: metadataValues[3])
                     AppInstances.scannedCodeList.append(qrCode)
                     // Update total label

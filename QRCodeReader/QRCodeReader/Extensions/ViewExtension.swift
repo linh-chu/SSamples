@@ -25,7 +25,7 @@ extension UIView {
         MBProgressHUD.hide(for: self, animated: true)
     }
     
-    func makeToast(_ message: String, backgroundColor: UIColor = .black, duration: Double = 2.0, position: ToastPosition = .center) {
+    func showToast(_ message: String, backgroundColor: UIColor = .black, duration: Double = 2.0, position: ToastPosition = .center) {
         var style = ToastStyle()
         var duration = duration
         
