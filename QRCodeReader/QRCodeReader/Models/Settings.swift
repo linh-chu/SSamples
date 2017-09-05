@@ -31,10 +31,11 @@ extension Settings {
         
         required init?(coder aDecoder: NSCoder) {
             guard let name = aDecoder.decodeObject(forKey: "name") as? String,
-                let entityCode = aDecoder.decodeObject(forKey: "entityCode") as? Int,
                 let deviceId = aDecoder.decodeObject(forKey: "deviceId") as? String else {
                     return nil
             }
+            let entityCode = aDecoder.decodeInteger(forKey: "entityCode")
+            
             settings = Settings(name: name, entityCode: entityCode, deviceId: deviceId)
             super.init()
         }

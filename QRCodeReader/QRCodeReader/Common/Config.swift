@@ -70,9 +70,8 @@ enum AppMethods {
     
     static func loadSettings() {
         if let data = UserDefaults.standard.object(forKey: Config.KEY_SETTINGS) as? Data {
-            if let decodedData = NSKeyedUnarchiver.unarchiveObject(with: data) {
-                print(decodedData)
-                //                AppInstances.settings = decodedData.decoded as! Settings
+            if let decodedData = (NSKeyedUnarchiver.unarchiveObject(with: data) as? Settings.Coding)?.decoded as? Settings {
+                AppInstances.settings = decodedData
             }
         }
     }
