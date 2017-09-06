@@ -31,6 +31,7 @@
 		87439BB51F57AFAF005930FC /* QRCodeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87439BB41F57AFAF005930FC /* QRCodeListController.swift */; };
 		87D3A5151F5E3F6D00E59622 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A5141F5E3F6D00E59622 /* ViewExtension.swift */; };
 		87D3A5171F5E439800E59622 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A5161F5E439800E59622 /* ViewControllerExtension.swift */; };
+		87D3A5191F5F736000E59622 /* QuickScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D3A5181F5F736000E59622 /* QuickScanController.swift */; };
 		F4F09DB71DAF669400026BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F09DB61DAF669400026BB2 /* AppDelegate.swift */; };
 		F4F09DBC1DAF669400026BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBA1DAF669400026BB2 /* Main.storyboard */; };
 		F4F09DBE1DAF669400026BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F09DBD1DAF669400026BB2 /* Assets.xcassets */; };
@@ -63,6 +64,7 @@
 		87439BB41F57AFAF005930FC /* QRCodeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QRCodeListController.swift; path = ViewControllers/QRCodeListController.swift; sourceTree = "<group>"; };
 		87D3A5141F5E3F6D00E59622 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewExtension.swift; path = Extensions/ViewExtension.swift; sourceTree = "<group>"; };
 		87D3A5161F5E439800E59622 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerExtension.swift; path = Extensions/ViewControllerExtension.swift; sourceTree = "<group>"; };
+		87D3A5181F5F736000E59622 /* QuickScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickScanController.swift; path = ViewControllers/QuickScanController.swift; sourceTree = "<group>"; };
 		CF8808BCE0CD115E310A0FCA /* Pods-QRCodeReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRCodeReader/Pods-QRCodeReader.release.xcconfig"; sourceTree = "<group>"; };
 		F4F09DB31DAF669400026BB2 /* QRCodeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCodeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4F09DB61DAF669400026BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				8729F3F31F5685BF00A5DF86 /* QRScannerController.swift */,
 				87439BB41F57AFAF005930FC /* QRCodeListController.swift */,
 				8729F4001F5CF9D000A5DF86 /* SettingsController.swift */,
+				87D3A5181F5F736000E59622 /* QuickScanController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				8729F4011F5CF9D000A5DF86 /* SettingsController.swift in Sources */,
 				87D3A5171F5E439800E59622 /* ViewControllerExtension.swift in Sources */,
 				8729F3F21F567EEB00A5DF86 /* QRCode.swift in Sources */,
+				87D3A5191F5F736000E59622 /* QuickScanController.swift in Sources */,
 				F4F09DB71DAF669400026BB2 /* AppDelegate.swift in Sources */,
 				8729F4151F5E2AEB00A5DF86 /* CSVHelper.swift in Sources */,
 				87D3A5151F5E3F6D00E59622 /* ViewExtension.swift in Sources */,

@@ -27,16 +27,13 @@ class SettingsController: BasePopupController {
         self.mainView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
         self.showAnimate()
         
-        if let uuid = UIDevice.current.identifierForVendor?.uuidString {
-            deviceIdTextField.text = uuid
-        }
-        
         AppMethods.loadSettings()
         if let settings = AppInstances.settings {
             nameTextField.text = settings.name
+            deviceIdTextField.text = settings.deviceId
             if let entity = AppMethods.getEntity(code: settings.entityCode) {
                 mDefaultEntity = entity
-                defaultEntityTextField.text = entity.value
+                defaultEntityTextField.text = entity.value                 
             }
         }
     }
