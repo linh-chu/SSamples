@@ -27,7 +27,7 @@ class MainController: BaseController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueStart" {
+        if segue.identifier == "segueStartSession" {
             // Create a new scan session
             AppInstances.scanSession = ScanSession()
             
@@ -37,7 +37,7 @@ class MainController: BaseController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "segueResume" {
+        if identifier == "segueResumeSession" {
             guard let _ = AppInstances.scanSession else {
                 // There is no in-progress session, prevent navigation
                 view.showToast("There is no session in progress. You need to start a new one!", backgroundColor: .red)
@@ -46,6 +46,10 @@ class MainController: BaseController {
         }
         return true
     }
+    
+    @IBAction func quickScanButtonOnTap(_ sender: UIButton) {
+    }
+    
     
     @IBAction func btnViewListTapped(_ sender: UIButton) {
     }
@@ -74,7 +78,7 @@ class MainController: BaseController {
         }
     }
     
-    // Pop up FindCow view controller
+    // Pop up Settings view controller
     func popUpSettings() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let settingsVC = storyboard.instantiateViewController(withIdentifier :"SettingsViewController") as! BasePopupController

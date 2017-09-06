@@ -47,7 +47,7 @@ enum AppMethods {
             if let decodedData = (NSKeyedUnarchiver.unarchiveObject(with: data) as? Settings.Coding)?.decoded as? Settings {
                 AppInstances.settings = decodedData
             }
-        }
+        }        
     }
     
     static func getEntity(code: Int) -> LCTupleInt? {

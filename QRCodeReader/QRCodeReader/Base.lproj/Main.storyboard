@@ -25,7 +25,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="BWZ-SC-Wfr">
                                 <rect key="frame" x="27" y="128" width="320" height="410"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2c-aZ-o7l">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2c-aZ-o7l" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="41.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
@@ -34,10 +34,11 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="ey2-rP-wcv" kind="show" id="fHm-gU-24X"/>
+                                            <action selector="quickScanButtonOnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FlK-C1-xKY"/>
+                                            <segue destination="ey2-rP-wcv" kind="show" identifier="segueQuickScan" id="fHm-gU-24X"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRa-9t-o1k">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRa-9t-o1k" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="73.5" width="320" height="42"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
@@ -46,10 +47,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="B0K-bi-dGX" kind="show" id="bIB-E1-kGf"/>
+                                            <segue destination="B0K-bi-dGX" kind="show" identifier="segueStartSession" id="bIB-E1-kGf"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uW-Vz-0fh">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3uW-Vz-0fh" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="147.5" width="320" height="41.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
@@ -58,10 +59,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="B0K-bi-dGX" kind="show" identifier="segueResume" id="X3y-80-f2P"/>
+                                            <segue destination="B0K-bi-dGX" kind="show" identifier="segueResumeSession" id="X3y-80-f2P"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-Q9-i30">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-Q9-i30" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="221" width="320" height="41.5"/>
                                         <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
@@ -73,7 +74,7 @@
                                             <action selector="btnSaveTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KDY-1m-7ZA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCE-7w-9AG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCE-7w-9AG" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="294.5" width="320" height="42"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
@@ -82,10 +83,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="pdQ-hD-2hg" kind="show" id="jML-gF-S87"/>
+                                            <segue destination="pdQ-hD-2hg" kind="show" identifier="segueCodeList" id="jML-gF-S87"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXf-pj-9ch">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXf-pj-9ch" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="368.5" width="320" height="41.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="28"/>
@@ -128,27 +129,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UkI-zl-ZkS">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkI-zl-ZkS">
                                 <rect key="frame" x="62" y="96" width="250" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="ZfY-k5-zr3"/>
+                                    <constraint firstAttribute="width" constant="250" id="jW3-Rj-wJU"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V1e-iU-U8z">
-                                <rect key="frame" x="0.0" y="380" width="375" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V1e-iU-U8z">
+                                <rect key="frame" x="0.0" y="378" width="375" height="2"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="3Gj-Of-OHW"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kl-db-z8l">
-                                <rect key="frame" x="0.0" y="390" width="375" height="277"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1kl-db-z8l">
+                                <rect key="frame" x="0.0" y="388" width="375" height="279"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5o-JP-vcA" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
                                         <rect key="frame" x="8" y="211" width="100" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <state key="normal" title="Copy">
-                                            <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="copyButtonOnTap:" destination="ey2-rP-wcv" eventType="touchUpInside" id="u7x-2p-fN0"/>
@@ -157,10 +162,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-E6-jfR" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
                                         <rect key="frame" x="137" y="211" width="100" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <state key="normal" title="Save">
-                                            <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="saveButtonOnTap:" destination="ey2-rP-wcv" eventType="touchUpInside" id="dGF-1I-SFW"/>
@@ -169,10 +174,10 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S2X-14-m5V" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
                                         <rect key="frame" x="267" y="211" width="100" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                         <state key="normal" title="Cancel">
-                                            <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelButtonOnTap:" destination="ey2-rP-wcv" eventType="touchUpInside" id="jeq-lJ-0oo"/>
@@ -206,28 +211,28 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0S-sE-hv4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0S-sE-hv4">
                                         <rect key="frame" x="147" y="38" width="220" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4z-gh-Z2P">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4z-gh-Z2P">
                                         <rect key="frame" x="147" y="67" width="220" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aD-Lv-yvc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aD-Lv-yvc">
                                         <rect key="frame" x="147" y="96" width="220" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JF5-I6-VLB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JF5-I6-VLB">
                                         <rect key="frame" x="147" y="125" width="220" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -239,6 +244,17 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="V1e-iU-U8z" secondAttribute="trailing" id="0Ix-Sl-VSd"/>
+                            <constraint firstItem="UkI-zl-ZkS" firstAttribute="top" secondItem="iE3-Wh-ATb" secondAttribute="bottom" constant="32" id="3f3-le-sy9"/>
+                            <constraint firstItem="V1e-iU-U8z" firstAttribute="leading" secondItem="Ez1-2u-1cS" secondAttribute="leading" id="3mE-lL-W1D"/>
+                            <constraint firstItem="UkI-zl-ZkS" firstAttribute="centerX" secondItem="Ez1-2u-1cS" secondAttribute="centerX" id="7eM-Gm-qdV"/>
+                            <constraint firstAttribute="trailing" secondItem="1kl-db-z8l" secondAttribute="trailing" id="9wx-zY-cOX"/>
+                            <constraint firstItem="Dhr-v7-APe" firstAttribute="top" secondItem="1kl-db-z8l" secondAttribute="bottom" id="Bjn-Q8-gzF"/>
+                            <constraint firstItem="V1e-iU-U8z" firstAttribute="top" secondItem="UkI-zl-ZkS" secondAttribute="bottom" constant="32" id="KLg-hr-MEb"/>
+                            <constraint firstItem="1kl-db-z8l" firstAttribute="top" secondItem="V1e-iU-U8z" secondAttribute="bottom" constant="8" id="nmG-cy-JCq"/>
+                            <constraint firstItem="1kl-db-z8l" firstAttribute="leading" secondItem="Ez1-2u-1cS" secondAttribute="leading" id="vqU-Qx-XBc"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="lblBatchId" destination="v0S-sE-hv4" id="69Q-MZ-c9f"/>
@@ -250,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlb-Ut-cpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765.5999999999999" y="187.55622188905548"/>
+            <point key="canvasLocation" x="1444" y="194"/>
         </scene>
         <!--Scanned Code List-->
         <scene sceneID="ART-IT-QH0">
@@ -368,7 +384,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnX-J7-75n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="425" y="188"/>
+            <point key="canvasLocation" x="750" y="194"/>
         </scene>
         <!--Settings Controller-->
         <scene sceneID="A38-i1-CDW">
@@ -515,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9B-GU-uEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="189"/>
+            <point key="canvasLocation" x="750" y="861"/>
         </scene>
         <!--Scanner Controller-->
         <scene sceneID="6su-PY-OE1">
@@ -607,6 +623,143 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gr6-jx-ReM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="424.80000000000001" y="-506.89655172413796"/>
+        </scene>
+        <!--Quick Scan Save Controller-->
+        <scene sceneID="L6S-0f-Rit">
+            <objects>
+                <viewController storyboardIdentifier="QuickScanSaveViewController" id="vvn-BS-ZLf" customClass="QuickScanSaveController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HJd-8N-Odj"/>
+                        <viewControllerLayoutGuide type="bottom" id="5cS-Ti-Cbk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2QR-1P-0wU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofl-Xj-UUM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Vs-dG-cWb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-nZ-XTh" customClass="CenterView" customModule="QRCodeReader" customModuleProvider="target">
+                                                <rect key="frame" x="32" y="203" width="310" height="260"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1A-Gc-gEy">
+                                                        <rect key="frame" x="8" y="19" width="112" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0YJ-Kb-f3B">
+                                                        <rect key="frame" x="128" y="16" width="174" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Et5-Lv-VLe">
+                                                        <rect key="frame" x="8" y="65" width="112" height="21"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ry-7E-WAE">
+                                                        <rect key="frame" x="128" y="60" width="174" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaO-90-9Eg">
+                                                        <rect key="frame" x="128" y="60" width="174" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <action selector="statusButtonOnTap:" destination="vvn-BS-ZLf" eventType="touchUpInside" id="Eg2-fi-bXN"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYW-My-gdw" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="112" width="294" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                        <state key="normal" title="Save as A New Session">
+                                                            <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="saveButtonOnTap:" destination="vvn-BS-ZLf" eventType="touchUpInside" id="YUx-qe-lGs"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnc-W4-gtk" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="158" width="294" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                        <state key="normal" title="Send">
+                                                            <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="sendButtonOnTap:" destination="vvn-BS-ZLf" eventType="touchUpInside" id="lO5-xI-fpi"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5i-sR-CwZ" customClass="Button" customModule="QRCodeReader" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="204" width="294" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                                        <state key="normal" title="Cancel">
+                                                            <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="cancelButtonOnTap:" destination="vvn-BS-ZLf" eventType="touchUpInside" id="Onn-5F-FUZ"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="310" id="61o-Sr-sUP"/>
+                                                    <constraint firstAttribute="height" constant="260" id="y0a-Gx-3L3"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="1Rh-nZ-XTh" firstAttribute="centerX" secondItem="6Vs-dG-cWb" secondAttribute="centerX" id="c0l-UW-SGn"/>
+                                            <constraint firstItem="1Rh-nZ-XTh" firstAttribute="centerY" secondItem="6Vs-dG-cWb" secondAttribute="centerY" id="eqo-SD-2xH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6Vs-dG-cWb" secondAttribute="bottom" id="6gx-vj-mAT"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Vs-dG-cWb" secondAttribute="trailing" id="HTp-sy-haB"/>
+                                    <constraint firstItem="6Vs-dG-cWb" firstAttribute="top" secondItem="Ofl-Xj-UUM" secondAttribute="top" id="OW5-JP-ikR"/>
+                                    <constraint firstItem="6Vs-dG-cWb" firstAttribute="leading" secondItem="Ofl-Xj-UUM" secondAttribute="leading" id="hUB-Q1-qCo"/>
+                                    <constraint firstItem="6Vs-dG-cWb" firstAttribute="height" secondItem="Ofl-Xj-UUM" secondAttribute="height" id="nzA-Rr-SZH"/>
+                                    <constraint firstItem="6Vs-dG-cWb" firstAttribute="width" secondItem="Ofl-Xj-UUM" secondAttribute="width" id="tR2-dX-8gH"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ofl-Xj-UUM" firstAttribute="centerY" secondItem="2QR-1P-0wU" secondAttribute="centerY" id="7OV-g7-ll5"/>
+                            <constraint firstItem="Ofl-Xj-UUM" firstAttribute="width" secondItem="2QR-1P-0wU" secondAttribute="width" id="Dpl-qm-e8S"/>
+                            <constraint firstItem="Ofl-Xj-UUM" firstAttribute="height" secondItem="2QR-1P-0wU" secondAttribute="height" id="Fhf-fm-dR5"/>
+                            <constraint firstItem="Ofl-Xj-UUM" firstAttribute="centerX" secondItem="2QR-1P-0wU" secondAttribute="centerX" id="UJ3-dW-RE8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="1Rh-nZ-XTh" id="Ehq-KR-kHm"/>
+                        <outlet property="locationTextField" destination="0YJ-Kb-f3B" id="2rm-nw-5Nv"/>
+                        <outlet property="mainView" destination="6Vs-dG-cWb" id="tl1-PT-f58"/>
+                        <outlet property="scrollView" destination="Ofl-Xj-UUM" id="O6x-cq-TbD"/>
+                        <outlet property="statusTextField" destination="4Ry-7E-WAE" id="wH8-3P-Oy0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6em-vf-vf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="862"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

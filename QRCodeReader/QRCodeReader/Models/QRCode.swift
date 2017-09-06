@@ -11,14 +11,14 @@ import Foundation
 struct QRCode {
     var batchId: String
     var desc: String
-    var location: String
+    var entityCode: Int
     var dateReceived: String
     var scanSessionId: String
     
     init(batchId: String, desc: String, location: String, dateReceived: String, scanSessionId: String = "") {
         self.batchId = batchId
         self.desc = desc
-        self.location = location
+        self.entityCode = entityCode
         self.dateReceived = dateReceived
         self.scanSessionId = scanSessionId
     }
@@ -27,7 +27,7 @@ struct QRCode {
         self.batchId = batchId
         self.scanSessionId = scanSessionId
         self.desc = desc
-        self.location = ""
+        self.entityCode = 0
         self.dateReceived = ""
     }
 }

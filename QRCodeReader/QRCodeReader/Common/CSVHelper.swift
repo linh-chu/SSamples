@@ -25,12 +25,18 @@ class CSVHelper {
         let path = URL(fileURLWithPath: NSTemporaryDirectory().appending(fileName))
         
         let name = scanSession.name
-        let dateCreated = scanSession.dateCreated
+        let organisationId = scanSession.organisationId
+        let dateCreated = scanSession.dateCreated        
         let entityValue = AppMethods.getEntity(code: scanSession.entityCode)?.value ?? ""
-        let devideId = scanSession.deviceId
+        let statusValue = AppMethods.getEntity(code: scanSession.statusCode)?.value ?? ""
+        let latitude = scanSession.latitude
+        let longitude = scanSession.longitude
         
         var csvText = fileName
-        csvText.append("Name:,'\(name),,Entity:,\(entityValue),,Device Id:,\(devideId)\n")
+        csvText.append("Name:,'\(name),,Organisation Id:,\(organisationId)\n")
+        csvText.append("Entity:,'\(entityValue),,Status:,\(statusValue)\n")
+        csvText.append("Latitude:,'\(latitude),,Longitude:,\(longitude)\n")
+        csvText.append("Date Created:,'\(latitude)\n\n")
         
         // Add title details
         csvText.append("Batch Id,Description,Location,Date Received\n")
@@ -60,6 +66,10 @@ class CSVHelper {
         } catch {
             print("Failed to create file: \(error)")
         }
+    }
+    
+    deinit {
+        debugPrint("Denit CSVHelper")
     }
     
     // Use a uniform \n for end of lines.

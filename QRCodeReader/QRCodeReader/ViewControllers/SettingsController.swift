@@ -27,7 +27,6 @@ class SettingsController: BasePopupController {
         self.mainView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
         self.showAnimate()
         
-        AppMethods.loadSettings()
         if let settings = AppInstances.settings {
             nameTextField.text = settings.name
             deviceIdTextField.text = settings.deviceId

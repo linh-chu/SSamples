@@ -22,11 +22,15 @@ class QRScannerController: BaseController {
         
         self.title = "SCAN SESSION"
         
-        if let barFrame = navigationController?.navigationBar.frame {
-            navigationController?.navigationBar.frame = CGRect(origin: barFrame.origin,
-                                                               size: CGSize(width: barFrame.size.width, height: 50))
-        }
+//        if let barFrame = navigationController?.navigationBar.frame {
+//            navigationController?.navigationBar.frame = CGRect(origin: barFrame.origin,
+//                                                               size: CGSize(width: barFrame.size.width, height: 50))
+//        }
 
+        // Display total number of scanned code
+        totalLabel.text = String(AppInstances.scannedCodeList.count)
+        
+        // Create a new capture session
         captureSession = CaptureSession(previewView)
         captureSession.delegate = self
     }

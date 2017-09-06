@@ -24,5 +24,6 @@ enum AppInstances {
                            LCTupleInt(key: 2, value: "CHECK-OUT"),
                            LCTupleInt(key: 3, value: "SOLD"),
                            LCTupleInt(key: 4, value: "OBSOLETE"),
-                           LCTupleInt(key: 5, value: "LOCATION UPDATE")]
+                           LCTupleInt(key: 5, value: "LOCATION UPDATE"),
+                           LCTupleInt(key: 6, value: "QUICK SCAN")]
 }
