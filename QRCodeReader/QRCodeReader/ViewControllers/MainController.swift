@@ -28,8 +28,23 @@ class MainController: BaseController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueStart" {
+            // Create a new scan session
+            AppInstances.scanSession = ScanSession()
+            
+            // Remove the current scanned code list as we are about to work on a new session
             AppInstances.scannedCodeList.removeAll()
-        }else if segue.identifier == "segueResume" {}
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "segueResume" {
+            guard let _ = AppInstances.scanSession else {
+                // There is no in-progress session, prevent navigation
+                view.showToast("There is no session in progress. You need to start a new one!", backgroundColor: .red)
+                return false
+            }
+        }
+        return true
     }
     
     @IBAction func btnViewListTapped(_ sender: UIButton) {

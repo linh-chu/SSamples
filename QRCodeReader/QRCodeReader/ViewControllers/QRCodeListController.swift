@@ -22,8 +22,7 @@ class QRCodeListController: BaseController {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
+        super.viewDidLoad()        
     }
     
     @IBAction func sendButtonOnTap(_ sender: UIBarButtonItem) {
