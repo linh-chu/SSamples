@@ -39,15 +39,15 @@ class CSVHelper {
         csvText.append("Date Created:,'\(latitude)\n\n")
         
         // Add title details
-        csvText.append("Batch Id,Description,Location,Date Received\n")
+        csvText.append("Batch Id,Description,Entity,Date Received\n")
         
         for qrCode in scannedList {
             let batchId = qrCode.batchId
             let desc = qrCode.desc
-            let location = qrCode.location
+            let site = qrCode.site
             let dateReceived = qrCode.dateReceived
             
-            csvText.append("\(batchId),\(desc),\(location),\(dateReceived)\n")
+            csvText.append("\(batchId),\(desc),\(site),\(dateReceived)\n")
         }
         
         do {

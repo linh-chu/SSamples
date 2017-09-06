@@ -197,7 +197,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BH-07-Pns">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BH-07-Pns">
                                         <rect key="frame" x="8" y="96" width="120" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -260,7 +260,7 @@
                         <outlet property="lblBatchId" destination="v0S-sE-hv4" id="69Q-MZ-c9f"/>
                         <outlet property="lblDateReceived" destination="JF5-I6-VLB" id="rRo-w7-6wl"/>
                         <outlet property="lblDesc" destination="n4z-gh-Z2P" id="gC6-t7-B0W"/>
-                        <outlet property="lblLocation" destination="2aD-Lv-yvc" id="w6H-iE-Pwf"/>
+                        <outlet property="lblEntity" destination="2aD-Lv-yvc" id="3rE-n2-Bq1"/>
                         <outlet property="previewView" destination="UkI-zl-ZkS" id="pHQ-ak-73I"/>
                     </connections>
                 </viewController>
@@ -305,7 +305,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd8-cS-m1T">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd8-cS-m1T">
                                                     <rect key="frame" x="8" y="58" width="120" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -353,7 +353,7 @@
                                             <outlet property="lblBatchId" destination="JZm-S5-BHj" id="21l-HP-Bzc"/>
                                             <outlet property="lblDateReceived" destination="jjo-G3-hml" id="7Wm-Cf-SX5"/>
                                             <outlet property="lblDesc" destination="bbJ-sq-uMt" id="lyb-eo-UCY"/>
-                                            <outlet property="lblLocation" destination="x5A-m3-fGd" id="IzQ-aT-ABI"/>
+                                            <outlet property="lblEntity" destination="x5A-m3-fGd" id="vwa-re-yS1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -531,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9B-GU-uEt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="861"/>
+            <point key="canvasLocation" x="824" y="915"/>
         </scene>
         <!--Scanner Controller-->
         <scene sceneID="6su-PY-OE1">
@@ -645,7 +645,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rh-nZ-XTh" customClass="CenterView" customModule="QRCodeReader" customModuleProvider="target">
                                                 <rect key="frame" x="32" y="203" width="310" height="260"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1A-Gc-gEy">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1A-Gc-gEy">
                                                         <rect key="frame" x="8" y="19" width="112" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
@@ -659,6 +659,14 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UoE-iM-Lzo">
+                                                        <rect key="frame" x="128" y="16" width="174" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <connections>
+                                                            <action selector="entityButtonOnTap:" destination="vvn-BS-ZLf" eventType="touchUpInside" id="hzl-F1-Zxa"/>
+                                                            <action selector="statusButtonOnTap:" destination="vvn-BS-ZLf" eventType="touchUpInside" id="hU8-Qo-QFi"/>
+                                                        </connections>
+                                                    </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Et5-Lv-VLe">
                                                         <rect key="frame" x="8" y="65" width="112" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -751,7 +759,7 @@
                     </view>
                     <connections>
                         <outlet property="contentView" destination="1Rh-nZ-XTh" id="Ehq-KR-kHm"/>
-                        <outlet property="locationTextField" destination="0YJ-Kb-f3B" id="2rm-nw-5Nv"/>
+                        <outlet property="entityTextField" destination="0YJ-Kb-f3B" id="yOs-V6-UlQ"/>
                         <outlet property="mainView" destination="6Vs-dG-cWb" id="tl1-PT-f58"/>
                         <outlet property="scrollView" destination="Ofl-Xj-UUM" id="O6x-cq-TbD"/>
                         <outlet property="statusTextField" destination="4Ry-7E-WAE" id="wH8-3P-Oy0"/>
@@ -759,7 +767,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6em-vf-vf7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="862"/>
+            <point key="canvasLocation" x="1234" y="915"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

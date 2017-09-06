@@ -12,7 +12,7 @@ class QuickScanController: BaseController {
 
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var lblDateReceived: UILabel!
-    @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var lblEntity: UILabel!
     @IBOutlet weak var lblDesc: UILabel!
     @IBOutlet weak var lblBatchId: UILabel!
     
@@ -58,12 +58,12 @@ class QuickScanController: BaseController {
         if let qrCode = currentQRCode {
             lblBatchId.text = qrCode.batchId
             lblDesc.text = qrCode.desc
-            lblLocation.text = qrCode.location
+            lblEntity.text = qrCode.site
             lblDateReceived.text = qrCode.dateReceived
         } else {
             lblBatchId.text = ""
             lblDesc.text = ""
-            lblLocation.text = ""
+            lblEntity.text = ""
             lblDateReceived.text = ""
         }
     }
@@ -77,7 +77,7 @@ class QuickScanController: BaseController {
         // Append qr code details
         var text = "Batch Id: \(qrCode.batchId)" +
                     "\nDescription: \(qrCode.desc)" +
-                    "\nLocation: \(qrCode.location)" +
+                    "\nEntity: \(qrCode.site)" +
                     "\nDate Received: \(qrCode.dateReceived)"
         
         // Append current settings

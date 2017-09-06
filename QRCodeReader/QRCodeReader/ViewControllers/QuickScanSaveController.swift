@@ -14,7 +14,7 @@ class QuickScanSaveController: BasePopupController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var contentView: CenterView!
-    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var entityTextField: UITextField!
     @IBOutlet weak var statusTextField: UITextField!
     
     var selectedStatus: LCTupleInt? = AppMethods.getStatus(code: 6)
@@ -42,6 +42,10 @@ class QuickScanSaveController: BasePopupController {
     
     @IBAction func cancelButtonOnTap(_ sender: UIButton) {
         removeAnimate()
+    }
+    
+    @IBAction func entityButtonOnTap(_ sender: UIButton) {
+        popover(sender, title: "Status")
     }
     
     @IBAction func statusButtonOnTap(_ sender: UIButton) {

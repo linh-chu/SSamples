@@ -105,7 +105,7 @@ extension CaptureSession: AVCaptureMetadataOutputObjectsDelegate {
             if metadataValues.count >= 4 && !hasPlayedSound {
                 // Found a qrcode
                 let qrCode = QRCode(batchId: metadataValues[0], desc: metadataValues[1],
-                                    location: metadataValues[2], dateReceived: metadataValues[3])
+                                    site: metadataValues[2], dateReceived: metadataValues[3])
                 // Play sound
                 CensorSound.playBeep()
                 hasPlayedSound = true

@@ -12,7 +12,7 @@ import MessageUI
 class QRCodeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblDateReceived: UILabel!
-    @IBOutlet weak var lblLocation: UILabel!
+    @IBOutlet weak var lblEntity: UILabel!
     @IBOutlet weak var lblDesc: UILabel!
     @IBOutlet weak var lblBatchId: UILabel!    
 }
@@ -54,7 +54,7 @@ extension QRCodeListController: UITableViewDelegate, UITableViewDataSource {
         let qrCode = AppInstances.scannedCodeList[indexPath.row]
         cell.lblBatchId.text = qrCode.batchId
         cell.lblDesc.text = qrCode.desc
-        cell.lblLocation.text = qrCode.location
+        cell.lblEntity.text = qrCode.site
         cell.lblDateReceived.text = qrCode.dateReceived
         
         return cell
