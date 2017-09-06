@@ -27,8 +27,9 @@ struct ScanSession {
         }
     }
     
-    init(statusCode: Int, latitude: Double, longitude: Double) {
+    init(entityCode: Int, statusCode: Int, latitude: Double, longitude: Double) {
         self.init()
+        self.entityCode = entityCode
         self.statusCode = statusCode
         self.latitude = latitude
         self.longitude = longitude

@@ -17,6 +17,7 @@ class QuickScanSaveController: BasePopupController {
     @IBOutlet weak var entityTextField: UITextField!
     @IBOutlet weak var statusTextField: UITextField!
     
+    var selectedEntity: LCTupleInt?
     var selectedStatus: LCTupleInt? = AppMethods.getStatus(code: 6)
     var currentScanSession: ScanSession?
     var currentQRCode: QRCode?
@@ -29,6 +30,10 @@ class QuickScanSaveController: BasePopupController {
         self.mainView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
         self.showAnimate()
         
+        if let settings = AppInstances.settings {
+            selectedEntity = AppMethods.getEntity(code: settings.entityCode)
+            entityTextField.text = selectedEntity?.value ?? ""
+        }
         statusTextField.text = selectedStatus?.value ?? ""
     }
 
@@ -45,7 +50,7 @@ class QuickScanSaveController: BasePopupController {
     }
     
     @IBAction func entityButtonOnTap(_ sender: UIButton) {
-        popover(sender, title: "Status")
+        popover(sender, title: "Entity")
     }
     
     @IBAction func statusButtonOnTap(_ sender: UIButton) {
@@ -58,10 +63,20 @@ class QuickScanSaveController: BasePopupController {
         let popoverInt = PopoverInt(for: sender, title: title) { [unowned self] tuple in
             guard let selectedData = tuple else { return }
             
-            self.selectedStatus = selectedData
-            self.statusTextField.text = selectedData.value
+            if title == "Entity" {
+                self.selectedEntity = selectedData
+                self.entityTextField.text = selectedData.value
+            } else {
+                self.selectedStatus = selectedData
+                self.statusTextField.text = selectedData.value
+            }
         }
-        popoverInt.dataList = AppInstances.statuses
+        
+        if title == "Entity" {
+            popoverInt.dataList = AppInstances.entities
+        } else {
+            popoverInt.dataList = AppInstances.statuses
+        }
         
         present(popoverInt, animated: true, completion: nil)
     }
@@ -72,8 +87,9 @@ class QuickScanSaveController: BasePopupController {
             return
         }
         
+        let entityCode = selectedEntity?.key ?? 0
         let statusCode = selectedStatus?.key ?? 0
-        currentScanSession = ScanSession(statusCode: statusCode, latitude: 0, longitude: 0)
+        currentScanSession = ScanSession(entityCode: entityCode, statusCode: statusCode, latitude: 0, longitude: 0)
         currentQRCode?.scanSessionId = currentScanSession!.id
         
         view.showToast("Data has been saved")
