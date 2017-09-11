@@ -20,10 +20,6 @@ class BaseController: UIViewController {
         self.hideKeyboardWhenTappedAround()
     }
     
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
-    
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)

@@ -73,7 +73,7 @@ class CSVHelper {
     }
     
     // Use a uniform \n for end of lines.
-    func cleanRows(_ file: String) -> String{
+    func cleanRows(_ file: String) -> String {
         var cleanFile = file
         cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
         cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")
@@ -81,7 +81,7 @@ class CSVHelper {
     }
     
     // Get a content array in each row
-    func getStringFieldsForRow(_ row: String, _ delimiter: String)-> [String]{
+    func getStringFieldsForRow(_ row: String, _ delimiter: String) -> [String] {
         return row.components(separatedBy: delimiter)
     }
     
