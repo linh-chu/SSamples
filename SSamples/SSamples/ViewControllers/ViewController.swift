@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var levelsLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +33,8 @@ class ViewController: UIViewController {
 //        }
         
         textView.textAlignment = .center
+        
+        RxManager.playGround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
